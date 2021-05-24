@@ -24,3 +24,9 @@ To use `go-mod-archiver`, see https://github.com/bradfitz/go-mod-archiver-test f
 * how to depend on this tool: https://github.com/bradfitz/go-mod-archiver-test/blob/main/tools.go (using the trick from https://github.com/golang/go/wiki/Modules#how-can-i-track-tool-dependencies-for-a-module)
 
 * an example GitHub workflow: https://github.com/bradfitz/go-mod-archiver-test/blob/main/.github/workflows/go-mod-archive.yml
+
+## Example result
+
+This is an example tag created by this tool:
+
+https://github.com/bradfitz/go-mod-archiver-test/tree/archive/gomod%2Fa8ea9b345793e2188297f019febc875fb915e94d94f48cce9a4f760413a430b4
