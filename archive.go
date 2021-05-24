@@ -48,6 +48,10 @@ func main() {
 	}
 	run(exec.Command("git", "add", "vendor"))
 	msg := fmt.Sprintf("go mod vendor from a go.mod with SHA-256 of %v", modSum)
+	os.Setenv("GIT_AUTHOR_NAME", "go-mod-archiver")
+	os.Setenv("GIT_AUTHOR_EMAIL", "go-mod-archiver@tailscale.github.fakeemail")
+	os.Setenv("GIT_COMMITTER_NAME", "go-mod-archiver")
+	os.Setenv("GIT_COMMITTER_EMAIL", "go-mod-archiver@tailscale.github.fakeemail")
 	run(exec.Command("git", "commit", "-m", msg))
 	run(exec.Command("git", "tag", "-a", ref, "-m", msg))
 	run(exec.Command("git", "push", "origin", ref))
