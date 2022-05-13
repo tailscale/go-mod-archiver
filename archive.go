@@ -53,7 +53,7 @@ func main() {
 	os.Setenv("GIT_COMMITTER_NAME", "go-mod-archiver")
 	os.Setenv("GIT_COMMITTER_EMAIL", "go-mod-archiver@tailscale.github.fakeemail")
 	run(exec.Command("git", "commit", "-m", msg))
-	run(exec.Command("git", "tag", "-a", ref, "-m", msg))
+	run(exec.Command("git", "tag", "-a", ref, "-f", "-m", msg))
 	run(exec.Command("git", "push", "origin", ref))
 	log.Printf("Pushed %v", ref)
 }
