@@ -46,7 +46,7 @@ func main() {
 		}
 		log.Fatalf("'go mod graph' shows dependencies but vendor folder absent after a 'go mod vendor'")
 	}
-	run(exec.Command("git", "add", "vendor"))
+	run(exec.Command("git", "add", "-f", "vendor"))
 	msg := fmt.Sprintf("go mod vendor from a go.mod with SHA-256 of %v", modSum)
 	os.Setenv("GIT_AUTHOR_NAME", "go-mod-archiver")
 	os.Setenv("GIT_AUTHOR_EMAIL", "go-mod-archiver@tailscale.github.fakeemail")
